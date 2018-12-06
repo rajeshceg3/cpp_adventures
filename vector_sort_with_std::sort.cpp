@@ -13,6 +13,9 @@ int main(){
     }
 
     std::cout<<std::endl;
+    // If the input is already available in the form of heap, 
+    // make use of std::sort_heap rather than std::sort
+    //std::sort_heap( vec.begin(),vec.end());
     std::sort( vec.begin(),vec.end());
     std::cout<<"After sorting" << std::endl;
 
