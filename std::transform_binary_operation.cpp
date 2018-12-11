@@ -39,6 +39,8 @@ int main(){
     // in place or via a new container as specified
     transform(collection.begin(), collection.end(),
               collection2.begin(),
+              // Note that, back_inserter(result_collection) can also be used
+              // to collect the result in transform operation
               result_collection.begin(),[](const int& i, const int &j) -> int
     {
         return i*j;
