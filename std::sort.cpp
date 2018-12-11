@@ -26,4 +26,6 @@ int main(){
     cout <<endl<< "After std::sort"<<endl;
 
     copy(begin(collection),end(collection),ostream_iterator<int> (cout, ": "));
+    // Alternatively, you can use std::move to make use of move semantics for underlying objects
+    //move(begin(collection),end(collection),ostream_iterator<int> (cout, ": "));
 }
