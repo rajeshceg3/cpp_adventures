@@ -40,8 +40,14 @@ int main(){
     transform(collection.begin(), collection.end(),
               collection2.begin(),
               // Note that, back_inserter(result_collection) can also be used
-              // to collect the result in transform operation
-              result_collection.begin(),[](const int& i, const int &j) -> int
+              // to collect the result in transform operation, but remember you
+              // should not do resize initially on result collection, it should
+              // be empty, better yet, resize is not required anyway on a result
+              // collection, as it is independent. Only size constraint here is
+              // collection 2 should have atleast the same number of elements as
+              // in collection, else it will result in unspecified behavior
+              result_collection.begin(),
+              [](const int& i, const int &j) -> int
     {
         return i*j;
     });
