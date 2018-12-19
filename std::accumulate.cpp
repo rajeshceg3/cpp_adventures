@@ -9,9 +9,8 @@ using namespace std;
 int main(){
     srand(time(nullptr));
     std::vector<int> vec(10);
-    generate_n(begin(vec), 10, [](){
-        return rand()%20;
-    });
+    // Generate a sequence of random numbers and store in vec
+    generate_n(begin(vec), 10, [](){return rand()%20; });
     cout<<"Original sequence\n";
     move(begin(vec), end(vec), ostream_iterator<int> (cout," "));
     cout<<"\n";
