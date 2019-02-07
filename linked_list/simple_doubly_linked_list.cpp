@@ -13,7 +13,7 @@ Node* createNode(int data){
 	temp->data = data;
 	temp->prev = NULL;
 	temp->next = NULL;
-    return temp;
+   	return temp;
 }
 
 int main()
@@ -26,6 +26,6 @@ int main()
 	}
    
   for(auto& i : Node_arr){
-      cout<<i->data << "\n";
+	  cout<<i->data << "\n";
   }
 }
