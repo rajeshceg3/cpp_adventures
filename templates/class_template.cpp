@@ -24,7 +24,7 @@ public:
             cerr<< "Capacity exceeded" << endl;
     }
 
-    void printBo(){
+    void printVector(){
         int n = sizeof(m_pdata)/sizeof(m_pdata[0]);
         cout<< "Myvector Contents"<<endl;
         cout<< "Size of Myvector "<<n<<endl;
@@ -43,6 +43,6 @@ int main(){
     bv.addtoMyvector(4);
     bv.addtoMyvector(3);
     bv.addtoMyvector(21);
-    bv.printBo();
+    bv.printVector();
 }
 
