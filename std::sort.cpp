@@ -10,9 +10,9 @@ int main(){
     vector<int> collection;
     srand(time(nullptr));
 
-    // fill vector with 10 random numbers
+    // fill vector with 10 random numbers, with max value of 99
     generate_n(back_inserter(collection), 10, [](){
-    return rand();
+    return rand() % 100;
     });    
 
     cout << "10 random numbers"<< endl;
