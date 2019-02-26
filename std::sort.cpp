@@ -11,9 +11,9 @@ int main(){
     srand(time(nullptr));
 
     // fill vector with 10 random numbers
-    for(int index = 0; index <10 ; ++index){
-        collection.emplace_back( std::rand());
-    }
+    generate_n(back_inserter(collection), 10, [](){
+    return rand();
+    });    
 
     cout << "10 random numbers"<< endl;
     ostream_iterator<int> cout_it(cout, ": ");
