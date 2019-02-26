@@ -26,5 +26,8 @@ int main() {
   auto partition_it = partition(
       begin(vec), end(vec), [](auto element) { return (element % 2) == 0; });
   printvec(vec);
+  
+  // partition returns an iterator to an element past the parition
+  // which serves a partition point
   cout << "Paritition point = " << *partition_it;
 }
