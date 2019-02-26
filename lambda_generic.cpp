@@ -5,6 +5,7 @@ using namespace std;
 int main(){
 
     // Generic lambdas, lambdas that take auto as a parameter are supported from c++14 onwards
+    // The return value of lambda can be specified as just auto as well, rather than a std::function
     function <void(double)> f = [](auto i)
     {
         cout<<i<<endl;
