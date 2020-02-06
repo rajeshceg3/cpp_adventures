@@ -1,2 +1,1 @@
-# CPPTraining_juniors
-Training code snippets
+C++, STL Algorithms and Containers 
