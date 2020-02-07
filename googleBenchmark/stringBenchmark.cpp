@@ -14,7 +14,7 @@ static void stringOptimization(benchmark::State &s)
 		{
 			// Construct string of specified length
             string str(len, 's');
-            vec._back(str);
+            vec.emplace_back(str);
         }
     }
 }
