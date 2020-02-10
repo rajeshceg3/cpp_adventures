@@ -34,5 +34,5 @@ int main()
 	vector<int> arr = {10, 7, 8, 9, 1, 5};
 	int index = arr.size() -1;
 	quicksort(arr,0,index);
-	for(const auto& slice: arr) cout<<slice<<" ";
+	for(const auto& slice: arr) cout<<slice<<" "; 
 }
