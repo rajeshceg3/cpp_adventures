@@ -19,5 +19,5 @@ static void stringOptimization(benchmark::State &s)
         }
     }
 }
-BENCHMARK(stringOptimization)->DenseRange(0,32)->Unit(benchmark::kMillisecond);
+BENCHMARK(stringOptimization)->DenseRange(0,32)->Unit(benchmark::kMillisecond); 
 BENCHMARK_MAIN();
