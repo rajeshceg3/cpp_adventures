@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+// A benchmark to illustrate short string optimization
 static void stringOptimization(benchmark::State &s)
 {
     int len = s.range(0);
@@ -12,7 +13,7 @@ static void stringOptimization(benchmark::State &s)
 	{
         for(int i = 0; i < 100000; i++)
 		{
-			// Construct string of specified length
+		 	// Construct string of specified length
             string str(len, 's');
             vec.emplace_back(str);
         }
