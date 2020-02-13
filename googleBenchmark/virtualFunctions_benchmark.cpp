@@ -49,8 +49,8 @@ static void shuffledForest(benchmark::State& s) {
   int sum = 0;
   for( auto _ : s) 
   {
-	  // Branch predictor efficiency will take a hit,as the
-	  // objects are shuffled randomly
+	// Branch predictor efficiency will take a hit,as the
+	// objects are shuffled randomly
     for (auto* animal : forest) 
       sum += animal->getValue();    
   }
