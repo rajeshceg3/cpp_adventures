@@ -13,4 +13,10 @@ int main()
     SimpleStruct s;
     std::cout << "addr: " << &s << "\n";
     std::cout << "size: " << sizeof(SimpleStruct) << "\n";
+    
+    // Structure will be aligned to 16 byte boundary
+    // whereas individual data elements will occupy 
+    // contiguous address
+    std::cout << "addr data1: " << &s.data1 << '\n';
+    std::cout << "addr data2: " << &s.data2 << '\n';
 }
