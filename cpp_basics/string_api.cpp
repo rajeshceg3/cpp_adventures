@@ -9,10 +9,10 @@ int main()
     std::cout << str.back() << "\n";
     std::cout << str.at(1) << "\n";
     std::cout << str.data() << "\n";
-	std::cout << str.size() << "\n";
+	  std::cout << str.size() << "\n";
     std::cout << str.max_size() << "\n";
     std::cout << str.empty() << "\n";
-	std::cout << str.substr(0, 5) << "\n";
+	  std::cout << str.substr(0, 5) << "\n";
 	
     if (str.compare("Hello World") == 0) 
         std::cout << "Hello World\n";
