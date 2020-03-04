@@ -25,6 +25,49 @@ public:
       return oss.str();
    } 
 
+    // Convert IP address to numeric form
+   constexpr unsigned long to_numeric() const noexcept
+   {
+      return
+         (static_cast<unsigned long>(data[0]) << 24) |
+         (static_cast<unsigned long>(data[1]) << 16) |
+         (static_cast<unsigned long>(data[2]) << 8) |
+         static_cast<unsigned long>(data[3]);
+   }
+
+    // Operations which help us identify additional info about
+    // the ip address class details we are dealing with
+   constexpr bool is_loopback() const noexcept
+   {
+      return (to_numeric() & 0xFF000000) == 0x7F000000;
+   }
+
+   constexpr bool is_unspecified() const noexcept
+   {
+      return to_numeric() == 0;
+   }
+
+   constexpr bool is_class_a() const noexcept
+   {
+      return (to_numeric() & 0x80000000) == 0;
+   }
+
+   constexpr bool is_class_b() const noexcept
+   {
+      return (to_numeric() & 0xC0000000) == 0x80000000;
+   }
+
+   constexpr bool is_class_c() const noexcept
+   {
+      return (to_numeric() & 0xE0000000) == 0xC0000000;
+   }
+
+   constexpr bool is_multicast() const noexcept
+   {
+      return (to_numeric() & 0xF0000000) == 0xE0000000;
+   }
+ 
+
     // Add stream support for our class
    friend std::ostream& operator<<(std::ostream& ost, const IPAddr& a)
    {
