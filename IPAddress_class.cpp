@@ -66,9 +66,40 @@ public:
    {
       return (to_numeric() & 0xF0000000) == 0xE0000000;
    }
+   
+   
+   friend bool operator==(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return IP1.data == IP2.data;
+   }
+
+   friend bool operator!=(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return !(IP1 == IP2);
+   }
+
+   friend bool operator<(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return IP1.to_numeric() < IP2.to_numeric();
+   }
+
+   friend bool operator>(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return IP2 < IP1;
+   }
+
+   friend bool operator<=(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return !(IP1 > IP2);
+   }
+
+   friend bool operator>=(IPAddr const & IP1, IPAddr const & IP2) noexcept
+   {
+      return !(IP1 < IP2);
+   }
  
 
-    // Add stream support for our class
+   // Add stream support for our class
    friend std::ostream& operator<<(std::ostream& ost, const IPAddr& a)
    {
       ost << static_cast<uint16_t>(a.data[0]) << '.' 
@@ -94,11 +125,11 @@ public:
 
 int main()
 {
-   IPAddr a(168, 192, 0, 1);
-   std::cout << a <<"\n";
+   IPAddr addr(168, 192, 0, 1);
+   std::cout << addr <<"\n";
    
    // Use Copy constructor and assignment operator
-   IPAddr b = a;
+   IPAddr b = addr;
    IPAddr c;
    c = b;
 
