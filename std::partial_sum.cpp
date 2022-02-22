@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iterator>
-#include <algorithm>
+#include <numeric>
 using namespace std;
 
 int main(){
