@@ -1,9 +1,11 @@
+// Example to demonstrate unique_ptr usage
 #include <iostream>
 #include <memory>
 
 class Widget {
+  uint32_t value_;
   public :
-    Widget(int value) : value_(value) { 
+    Widget(uint32_t value) : value_(value) { 
       std::cout << "Building Widget " << value_ << "\n"; 
     }
 
@@ -11,8 +13,6 @@ class Widget {
       std::cout << "Destroying Widget " << value_ << "\n"; 
     }
   
-  private :
-    int value_;
 };
 
 int main() 
