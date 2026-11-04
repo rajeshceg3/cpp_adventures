@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 #include <string>
 #include <ctime>
 using namespace std;
@@ -13,9 +14,8 @@ int doBinarySearch(const vector<int>& inputVector,int first, int last, int value
         cout<<"Element found at "<<middle <<"\n";
         return middle;
     }
-    else if ( currenthit > value) doBinarySearch(inputVector,first, middle-1, value );
-    else if ( currenthit < value) doBinarySearch(inputVector,middle+1, last, value );
-    //return 0;
+    else if ( currenthit > value) return doBinarySearch(inputVector,first, middle-1, value );
+    else return doBinarySearch(inputVector,middle+1, last, value );
 }
 
 int main(){
@@ -31,4 +31,5 @@ int last = myVector.size() -1;
 // Search for the element 25 in the vector
 int resultPosition = doBinarySearch(myVector,0,last, 25);
 cout<<"Postion where element is found "<<resultPosition<<"\n";
+return 0;
 }

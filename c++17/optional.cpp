@@ -5,6 +5,8 @@ class SimpleClass
 {
     int value;
 	public:
+    int getValue() const { return value; }
+
     SimpleClass(int v) :
     value(v)
     {
@@ -18,12 +20,12 @@ int main()
     std::cout << "Class is not yet Constructed\n";
 
     if (opt) 
-        std::cout << "First try: " << opt->value << "\n";
+        std::cout << "First try: " << opt->getValue() << "\n";
 
     opt = SimpleClass(42);
 
     if (opt) 
-        std::cout << "Second try: " << opt->value << "\n";
+        std::cout << "Second try: " << opt->getValue() << "\n";
     
 	  return 0;
 }
